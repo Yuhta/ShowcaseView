@@ -102,7 +102,7 @@ public class ShowcaseView extends RelativeLayout
         metricScale = getContext().getResources().getDisplayMetrics().density;
         mEndButton = (Button) LayoutInflater.from(context).inflate(R.layout.showcase_button, null);
 
-        mShowcaseDrawer = new ClingDrawerImpl(getResources(), mShowcaseColor);
+        mShowcaseDrawer = new ClingDrawerImpl(getResources(), showcaseColor);
 
         // TODO: This isn't ideal, ClingDrawer and Calculator interfaces should be separate
         mTextDrawer = new TextDrawerImpl(metricScale, mShowcaseDrawer);
