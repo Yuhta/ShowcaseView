@@ -108,6 +108,7 @@ public class TextDrawerImpl implements TextDrawer {
         //TODO: currently only considers above or below showcase, deal with left or right
         mBestTextPosition[0] = 24 * mDensityScale;
         mBestTextPosition[1] = spaceTop > spaceBottom ? 128 * mDensityScale
+                : spaceBottom < 0 ? canvasH - 64 * mDensityScale
                 : 24 * mDensityScale + mCalculator.getShowcaseRect().bottom;
         mBestTextPosition[2] = canvasW - 48 * mDensityScale;
 
