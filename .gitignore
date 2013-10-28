@@ -39,3 +39,9 @@ settings.xml
 # Gradle
 .gradle
 build
+
+javadoc/
+
+# Vim tags and session file
+/tags
+Session.vim
