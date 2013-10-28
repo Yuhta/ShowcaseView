@@ -511,6 +511,8 @@ public class ShowcaseView extends RelativeLayout
             return true;
         }
 
+        if (mOptions.blockAll) return true;
+
         return mOptions.block && distanceFromFocus > showcaseRadius;
     }
 
@@ -752,7 +754,7 @@ public class ShowcaseView extends RelativeLayout
 
     public static class ConfigOptions {
 
-        public boolean block = true, noButton = false;
+        public boolean block = true, blockAll = true, noButton = false;
         public boolean hideOnClickOutside = false;
 
         /**
