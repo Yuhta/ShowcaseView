@@ -49,6 +49,9 @@ public class ShowcaseViews {
 
         ShowcaseView showcaseView = builder.build();
         showcaseView.overrideButtonClick(createShowcaseViewDismissListener(showcaseView));
+        if (properties.onShowcaseEventListener != null)
+            showcaseView.setOnShowcaseEventListener
+                (properties.onShowcaseEventListener);
         views.add(showcaseView);
 
         return this;
@@ -130,6 +133,7 @@ public class ShowcaseViews {
         protected final int itemType;
         protected final float scale;
         protected final ShowcaseView.ConfigOptions configOptions;
+        protected OnShowcaseEventListener onShowcaseEventListener;
 
         public ItemViewProperties(int titleResId, int messageResId) {
             this(ID_NO_SHOWCASE, titleResId, messageResId, ID_NOT_IN_ACTIONBAR, DEFAULT_SCALE, null);
@@ -174,6 +178,13 @@ public class ShowcaseViews {
             this.itemType = itemType;
             this.scale = scale;
             this.configOptions = configOptions;
+        }
+
+        public ItemViewProperties
+        setOnShowcaseEventListener(OnShowcaseEventListener listener)
+        {
+            onShowcaseEventListener = listener;
+            return this;
         }
     }
 }
